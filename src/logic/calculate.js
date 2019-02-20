@@ -13,8 +13,10 @@ import isNumber from "./isNumber";
  *   operation:String  +, -, etc.
  */
 export default function calculate(obj, buttonName) {
+
   if (buttonName === "AC") {
     return {
+      str: null,
       total: null,
       next: null,
       operation: null,
@@ -81,6 +83,7 @@ export default function calculate(obj, buttonName) {
     if (obj.next && obj.operation) {
       return {
         total: operate(obj.total, obj.next, obj.operation),
+        str: null,
         next: null,
         operation: null,
       };
